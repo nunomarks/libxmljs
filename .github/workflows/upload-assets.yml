@@ -89,12 +89,12 @@ jobs:
             curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
             source $HOME/.nvm/nvm.sh
             nvm install v${{matrix.config.node-version}}
+            npm install -g npm@${{ matrix.config.npm-version }}
           
           run: |
             source ~/.nvm/nvm.sh
             nvm --version
             node --version
-            npm install -g npm@${{ matrix.config.npm-version }}
             npm config set progress false
             npm config set spin false
             npm i @mapbox/node-pre-gyp node-gyp -g
@@ -102,9 +102,6 @@ jobs:
             npm install --build-from-source
             node-pre-gyp package 2>&1
 
-      - name: Upload release binary
-        uses: alexellis/upload-assets@0.3.0
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        with:
-          asset_paths: '["./build/stage/libxmljs/libxmljs/releases/download/**/*.tar.gz"]'
+      - name: List files
+        run:
+          ls ./build/stage/libxmljs/libxmljs/releases/download/**/*.tar.gz
