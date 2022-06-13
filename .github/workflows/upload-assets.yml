@@ -85,7 +85,7 @@ jobs:
 
           install: |
             apt update
-            apt install -y curl
+            apt install -y curl python build-essential
             curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
             source $HOME/.nvm/nvm.sh
             nvm install v${{matrix.config.node-version}}
