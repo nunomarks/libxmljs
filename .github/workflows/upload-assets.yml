@@ -100,6 +100,7 @@ jobs:
             npm i @mapbox/node-pre-gyp node-gyp -g
 
             npm install --build-from-source
+            node-pre-gyp rebuild
             node-pre-gyp package 2>&1
 
       - name: List files
