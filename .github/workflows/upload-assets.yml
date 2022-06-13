@@ -94,6 +94,7 @@ jobs:
             npm install -g npm@${{ matrix.config.npm-version }}
           
           run: |
+            pwd
             ls -l
             source ~/.nvm/nvm.sh
             nvm --version
