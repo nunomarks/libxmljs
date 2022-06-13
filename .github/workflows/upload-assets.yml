@@ -81,7 +81,7 @@ jobs:
           dockerRunArgs: |
             --volume "${PWD}/build:/build"
 
-          shell: /bin/bash
+          shell: /bin/sh
 
           install:
             apt update
