@@ -65,6 +65,9 @@ jobs:
       - uses: actions/checkout@master
         with:
           fetch-depth: 1
+      - name: List files
+        run:
+          ls -l
       - uses: uraimo/run-on-arch-action@v2
         name: Build artifact
         id: build
