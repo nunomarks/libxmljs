@@ -80,6 +80,8 @@ jobs:
           # Mount the artifacts directory as /artifacts in the container
           dockerRunArgs: |
             --volume "${PWD}/build:/build"
+            --volume "${PWD}/${{github.event.repository.name}}:/app"
+            --workdir "/app"
 
           shell: /bin/bash
 
