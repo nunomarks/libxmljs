@@ -85,6 +85,7 @@ jobs:
             apt update
             apt install -y curl
             curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+            echo "Home is $HOME"
             source $HOME/.nvm/nvm.sh
             nvm install v${{matrix.config.node-version}}
           
