@@ -70,7 +70,7 @@ jobs:
         id: build
         with:
           arch: aarch64
-          distro: ubuntu-latest
+          distro: ubuntu_latest
           githubToken: ${{ github.token }}
 
           # Create an artifacts directory
