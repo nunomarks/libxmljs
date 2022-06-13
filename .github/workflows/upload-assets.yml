@@ -60,7 +60,7 @@ jobs:
         # - { node-version: 16, npm-version: 8 }
         # - { node-version: 17, npm-version: 8 }
         # - { node-version: 18, npm-version: 8 }
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@master
         with:
@@ -70,7 +70,7 @@ jobs:
         id: build
         with:
           arch: aarch64
-          distro: ubuntu18.04
+          distro: ubuntu-latest
           githubToken: ${{ github.token }}
 
           # Create an artifacts directory
